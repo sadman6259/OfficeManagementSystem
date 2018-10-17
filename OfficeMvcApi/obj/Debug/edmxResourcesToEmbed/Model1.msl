@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="OfficeDbModelStoreContainer" CdmEntityContainer="OfficeDbEntities">
+    <EntitySetMapping Name="Additionals">
+      <EntityTypeMapping TypeName="OfficeDbModel.Additional">
+        <MappingFragment StoreEntitySet="Additional">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RentSpace" ColumnName="RentSpace" />
+          <ScalarProperty Name="Equipments" ColumnName="Equipments" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="TotalAdditional" ColumnName="TotalAdditional" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Bills">
+      <EntityTypeMapping TypeName="OfficeDbModel.Bill">
+        <MappingFragment StoreEntitySet="Bills">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Electricity" ColumnName="Electricity" />
+          <ScalarProperty Name="Water" ColumnName="Water" />
+          <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+          <ScalarProperty Name="Month" ColumnName="Month" />
+          <ScalarProperty Name="TotalBills" ColumnName="TotalBills" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clarks">
+      <EntityTypeMapping TypeName="OfficeDbModel.Clark">
+        <MappingFragment StoreEntitySet="Clark">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="OfficeDbModel.Employee">
+        <MappingFragment StoreEntitySet="Employee">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Position" ColumnName="Position" />
+          <ScalarProperty Name="TotalSalary" ColumnName="TotalSalary" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Managements">
+      <EntityTypeMapping TypeName="OfficeDbModel.Management">
+        <MappingFragment StoreEntitySet="Management">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="SponsoredAmount" ColumnName="SponsoredAmount" />
+          <ScalarProperty Name="SellingAmount" ColumnName="SellingAmount" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="ClarkId" ColumnName="ClarkId" />
+          <ScalarProperty Name="BillId" ColumnName="BillId" />
+          <ScalarProperty Name="AdditionalId" ColumnName="AdditionalId" />
+          <ScalarProperty Name="Profit" ColumnName="Profit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

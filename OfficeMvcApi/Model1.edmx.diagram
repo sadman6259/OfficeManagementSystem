@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="83a576b362d24d4e8997b256ba3fba58" Name="Diagram1">
+        <EntityTypeShape EntityType="OfficeDbModel.Additional" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="OfficeDbModel.Bill" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OfficeDbModel.Clark" Width="1.5" PointX="0.75" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="OfficeDbModel.Employee" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="OfficeDbModel.Management" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="OfficeDbModel.FK_Management_Additional" ManuallyRouted="false" />
+        <AssociationConnector Association="OfficeDbModel.FK_Management_Bills" ManuallyRouted="false" />
+        <AssociationConnector Association="OfficeDbModel.FK_Management_Clark" ManuallyRouted="false" />
+        <AssociationConnector Association="OfficeDbModel.FK_Management_Employee" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

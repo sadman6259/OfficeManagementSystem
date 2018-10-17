@@ -1,0 +1,74 @@
+﻿@model OfficeMvcApi.Management
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Management</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SponsoredAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SponsoredAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SellingAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SellingAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Profit)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Profit)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Additional.Month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Additional.Month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bill.Month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bill.Month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Clark.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Clark.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

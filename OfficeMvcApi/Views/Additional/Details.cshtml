@@ -1,0 +1,50 @@
+﻿@model OfficeMvcApi.Additional
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Additional</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.RentSpace)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RentSpace)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Equipments)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Equipments)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Month)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Month)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TotalAdditional)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TotalAdditional)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

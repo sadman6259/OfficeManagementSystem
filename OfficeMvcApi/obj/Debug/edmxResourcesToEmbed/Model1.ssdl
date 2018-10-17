@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="OfficeDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2005" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Additional">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RentSpace" Type="int" Nullable="false" />
+    <Property Name="Equipments" Type="int" Nullable="false" />
+    <Property Name="Month" Type="varchar" MaxLength="50" />
+    <Property Name="TotalAdditional" Type="int" />
+  </EntityType>
+  <EntityType Name="Bills">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Electricity" Type="int" Nullable="false" />
+    <Property Name="Water" Type="int" Nullable="false" />
+    <Property Name="Lunch" Type="int" Nullable="false" />
+    <Property Name="Month" Type="varchar" MaxLength="50" />
+    <Property Name="TotalBills" Type="int" />
+  </EntityType>
+  <EntityType Name="Clark">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+    <Property Name="Position" Type="varchar" MaxLength="50" />
+    <Property Name="TotalSalary" Type="int" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" />
+    <Property Name="Salary" Type="int" Nullable="false" />
+    <Property Name="Position" Type="varchar" MaxLength="50" />
+    <Property Name="TotalSalary" Type="int" />
+  </EntityType>
+  <EntityType Name="Management">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SponsoredAmount" Type="int" Nullable="false" />
+    <Property Name="SellingAmount" Type="int" Nullable="false" />
+    <Property Name="EmpId" Type="int" Nullable="false" />
+    <Property Name="ClarkId" Type="int" Nullable="false" />
+    <Property Name="BillId" Type="int" Nullable="false" />
+    <Property Name="AdditionalId" Type="int" Nullable="false" />
+    <Property Name="Profit" Type="int" />
+  </EntityType>
+  <Association Name="FK_Management_Additional">
+    <End Role="Additional" Type="Self.Additional" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Additional">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="AdditionalId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Management_Bills">
+    <End Role="Bills" Type="Self.Bills" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Bills">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="BillId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Management_Clark">
+    <End Role="Clark" Type="Self.Clark" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Clark">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="ClarkId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Management_Employee">
+    <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+    <End Role="Management" Type="Self.Management" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Employee">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Management">
+        <PropertyRef Name="EmpId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="OfficeDbModelStoreContainer">
+    <EntitySet Name="Additional" EntityType="Self.Additional" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Bills" EntityType="Self.Bills" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Clark" EntityType="Self.Clark" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Management" EntityType="Self.Management" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Management_Additional" Association="Self.FK_Management_Additional">
+      <End Role="Additional" EntitySet="Additional" />
+      <End Role="Management" EntitySet="Management" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Management_Bills" Association="Self.FK_Management_Bills">
+      <End Role="Bills" EntitySet="Bills" />
+      <End Role="Management" EntitySet="Management" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Management_Clark" Association="Self.FK_Management_Clark">
+      <End Role="Clark" EntitySet="Clark" />
+      <End Role="Management" EntitySet="Management" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Management_Employee" Association="Self.FK_Management_Employee">
+      <End Role="Employee" EntitySet="Employee" />
+      <End Role="Management" EntitySet="Management" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

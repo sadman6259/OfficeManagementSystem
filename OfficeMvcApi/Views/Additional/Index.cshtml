@@ -1,0 +1,56 @@
+﻿@model IEnumerable<OfficeMvcApi.Additional>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>All Additional Costs According To Month</h2>
+@{
+    int v = 0;
+}
+<p>
+    @Html.ActionLink("Create New", "Create", new { id = 1 }, new { @class = "btn btn-primary btn-large" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.RentSpace)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Equipments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Month)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TotalAdditional)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+  //item.TotalAdditional = item.RentSpace + item.Equipments;
+    
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.RentSpace)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Equipments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Month)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TotalAdditional)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-primary btn-large" }) 
+            @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-large" }) 
+            @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-primary btn-large" })
+        </td>
+    </tr>
+    
+}
+
+</table>

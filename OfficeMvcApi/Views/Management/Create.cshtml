@@ -1,0 +1,83 @@
+﻿@model OfficeMvcApi.Management
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Management</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SponsoredAmount, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SponsoredAmount)
+                @Html.ValidationMessageFor(model => model.SponsoredAmount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SellingAmount, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SellingAmount)
+                @Html.ValidationMessageFor(model => model.SellingAmount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.EmpId, "Employee Salary", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("EmpId", String.Empty)
+                @Html.ValidationMessageFor(model => model.EmpId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ClarkId, "Clark Salary", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ClarkId", String.Empty)
+                @Html.ValidationMessageFor(model => model.ClarkId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.BillId, "Month For Bills Cost", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("BillId", String.Empty)
+                @Html.ValidationMessageFor(model => model.BillId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Additional.TotalAdditional, "Month For Additional Cost", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("AdditionalId", String.Empty)
+                @Html.ValidationMessageFor(model => model.AdditionalId)
+            </div>
+        </div>
+
+     
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
